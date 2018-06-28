@@ -1,6 +1,16 @@
-<div *ngFor = "let fc of foodcourtArr">
-  <hr>
-  <h3>{{ fc.fc_name }}</h3>
-  <h4>{{ fc.location }}</h4>
-  <!-- <img src="../{{}}"> -->
-</div>
+<div class="container-fluid" *ngFor="let fc of foodcourtArr">
+        <div class="row">
+            <div class="col" *ngIf = "fc.fc_id == 1">
+                <h3>{{fc.fc_name}}</h3>
+                <h4>{{fc.location}}</h4>
+                <h4>{{fc.op_hours}}</h4>
+                <span (click)="onViewDetail(fc.fc_id, fc.fc_name, i)" >[view]</span>
+            </div>
+            <div class="col" *ngIf = "fc.fc_id == 2">
+                <h3>{{fc.fc_name}}</h3>
+                <h4>{{fc.location}}</h4>
+                <h4>{{fc.op_hours}}</h4>
+                <span (click)="onViewDetail(fc.fc_id, fc.fc_name, i)" >[view]</span>
+            </div>
+          </div>
+      </div>

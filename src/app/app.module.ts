@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { HeaderComponent } from './header/header.component';
 import { FoodCourtService } from './shared/service/food-court.service';
+import { FoodcourtdetailComponent } from './foodcourtdetail/foodcourtdetail.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { FoodCourtService } from './shared/service/food-court.service';
     FoodcourtSummaryComponent,
     HomeComponent,
     ContactusComponent,
-    HeaderComponent
+    HeaderComponent,
+    FoodcourtdetailComponent
   ],
   imports: [
     BrowserModule,

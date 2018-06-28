@@ -15,4 +15,12 @@ export class FoodCourtService {
   getFoodCourts() {
     return this.foodcourtList.slice();
   }
+  getFoodCourtByFcID(fc_id) {
+    for (let fc of this.foodcourtList) {
+      if (fc.fc_id == fc_id) {
+        return fc;
+      }
+    }
+    return null;
+  }
 }
