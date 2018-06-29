@@ -5,14 +5,14 @@ import { Routes, RouterModule } from "@angular/router";
 import { HomeComponent } from "./home/home.component";
 import { ContactusComponent } from "./contactus/contactus.component";
 import { FoodcourtSummaryComponent } from './foodcourt-summary/foodcourt-summary.component';
-import { FoodcourtdetailComponent } from './foodcourtdetail/foodcourtdetail.component';
+import { FoodcourtDetailComponent } from './foodcourtdetail/foodcourtdetail.component';
 
 const appRoutes : Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: 'home',                component: HomeComponent},
   {path: 'contactus',           component: ContactusComponent},
   {path: 'foodcourt-summary',   component: FoodcourtSummaryComponent},
-  {path: 'foodcourtdetail/:fc_id', component:FoodcourtdetailComponent}
+  {path: 'foodcourtdetail/:fc_id', component:FoodcourtDetailComponent}
 ];
 
 @NgModule({

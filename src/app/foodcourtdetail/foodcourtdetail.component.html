@@ -1,11 +1,6 @@
-<div class="card">
-    <div class="card-body">
-      <h4 class="card-title"> {{selectedFoodCourt.fc_name}}</h4>
-      <h6 class="card-subtitle mb-2 text-muted">Available stalls</h6>
-        <p class="card-text">
-          
-        </p>
-      <hr/>
-      <a class="card-link" routerLink="/foodcourt-summary">Back to List</a>
-    </div>
+<div *ngFor="let Stalls of stallarr">
+  <div class="col1">
+      <p>{{ Stalls.stall_name }}</p>
+      <p>{{ Stalls.description }}</p>
   </div>
+</div>
