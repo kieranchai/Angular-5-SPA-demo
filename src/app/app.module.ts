@@ -11,7 +11,6 @@ import { HeaderComponent } from './header/header.component';
 import { FoodCourtService } from './shared/service/food-court.service';
 import { FoodcourtdetailComponent } from './foodcourtdetail/foodcourtdetail.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,

@@ -13,7 +13,8 @@ export class FoodcourtdetailComponent implements OnInit {
 
   constructor(public router: Router,
     public route: ActivatedRoute, 
-    public FoodCourtService : FoodCourtService) { }
+    public FoodCourtService : FoodCourtService
+  ) { }
 
   ngOnInit() {
     const fc_id : number = this.route.snapshot.params['fc_id'];
