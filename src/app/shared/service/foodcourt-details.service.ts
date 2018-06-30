@@ -7,12 +7,12 @@ import { Stalls } from "../model/foodcourtstalls.model";
 export class FoodCourtDetailsService {
 
   public StallList = [
-    new Stalls(1, 1, "Japanese Cuisine", "fc4_jap01.jpg", "fc4_jap02.jpg", "Japanese Cuisine with dishes like Chicken Katsu Curry and Katsu Dons" ),
-    new Stalls(1, 2, "Western Food", "fc4_wes01.jpg", "fc4_wes02.jpg", "Western Cuisine with dishes like chicken cutlets and chops"),
-    new Stalls(1, 3, "Drinks Store", "fc4_drinks01.jpg", "fc4_drinks02.jpg", "Drinks store with desserts and salad"),
-    new Stalls(2, 4, "KFC", "fc6_kfc01.jpg", "fc6_kfc02.jpg", "Finger licking good" ),
-    new Stalls(2, 5, "McDonalds", "fc6_mcd01.jpg", "fc6_mcd02.jpg", "Im lovin it" ),
-    new Stalls(2, 6, "Subway", "fc6_subway01.jpg", "fc6_subway02.jpg", "Eat fresh" ),
+    new Stalls(1, 1, "Japanese Cuisine", "fc4_jap01.jpg", "fc4_jap02.jpg", "Japanese Cuisine with dishes like Chicken Katsu Curry and Katsu Dons." ),
+    new Stalls(1, 2, "Western Food", "fc4_wes01.jpg", "fc4_wes02.jpg", "Western Cuisine with dishes like chicken chops and mashed potatoes."),
+    new Stalls(1, 3, "Drinks Store", "fc4_drinks01.jpg", "fc4_drinks02.jpg", "Drinks store with desserts."),
+    new Stalls(2, 4, "Malay Rice", "fc6_malayrice01.jpg", "fc6_malayrice02.jpg", "A wide selection of halal food." ),
+    new Stalls(2, 5, "Drinks Store", "fc6_drinks01.jpg", "fc6_drinks02.jpg", "Drinks store ranging from bottled drinks to brewed coffee." ),
+    new Stalls(2, 6, "Chicken Rice", "fc6_chicken01.jpg", "fc6_chicken02.jpg", "The Singaporean favourite." ),
   ]
 
   getFoodCourtsStalls() {

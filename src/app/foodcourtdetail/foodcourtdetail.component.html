@@ -1,6 +1,8 @@
-<div *ngFor="let Stalls of stallarr">
-  <div class="col1">
-      <p>{{ Stalls.stall_name }}</p>
-      <p>{{ Stalls.description }}</p>
+<div class="card" *ngFor="let Stalls of stallarr">
+  <h3 class="card-header">{{Stalls.stall_name}}</h3>
+  <div class="card-body">
+    <p class="card-text">{{Stalls.description}}</p>
   </div>
 </div>
+<hr/>
+<div><span routerLink="/foodcourt-summary" class="btn btn-primary">Go back</span></div>

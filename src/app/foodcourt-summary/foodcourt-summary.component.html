@@ -1,11 +1,9 @@
-<div *ngFor="let fc of foodcourtArr " >
-    <span (click)="onViewDetail(fc.fc_id)">
-    <hr>
-    <h3>{{ fc.fc_name }}</h3>
-    <h4>{{ fc.location }}</h4>
-    <h4>{{ fc.op_hours }}</h4>
-    <h4>{{ fc.description }}</h4>
-    </span>
-  </div>
-  
-  
+<div class="card" *ngFor="let fc of foodcourtArr">
+    <h3 class="card-header">{{fc.fc_name}}</h3>
+    <div class="card-body">
+      <h4 class="card-title">{{fc.location}}</h4>
+      <p class="card-text">{{fc.op_hours}}</p>
+      <p class="card-text">{{fc.description}}</p>
+      <span class="btn btn-primary" (click)="onViewDetail(fc.fc_id)">View stalls</span>
+    </div>
+</div>

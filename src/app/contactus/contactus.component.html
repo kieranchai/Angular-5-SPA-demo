@@ -1,48 +1,79 @@
+<h4>Enquiry form</h4>
+<hr/>
 <div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="well well-sm">
-                <form class="form-horizontal" routerLink="/home">
-                    <fieldset>
-                        <legend class="text-center header">Contact us</legend>
-                        <div class="form-group">
-                            <div class="col-md-8">
-                                <input id="fname" name="name" type="text" placeholder="First Name" class="form-control">
-                            </div>
-                            <br/>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-md-8">
-                                <input id="lname" name="name" type="text" placeholder="Last Name" class="form-control">
-                            </div>
-                            <br/>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-md-8">
-                                <input id="email" name="email" type="text" placeholder="Email Address" class="form-control">
-                            </div>
-                            <br/>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-md-8">
-                                <input id="phone" name="phone" type="text" placeholder="Phone" class="form-control">
-                            </div>
-                            <br/>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-md-8">
-                                <textarea class="form-control" id="message" name="message" placeholder="Enter your massage for us here. We will get back to you within 2 business days." rows="7"></textarea>
-                            </div>
-                            <br/>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-md-12 text-center">
-                                <button type="submit" class="btn btn-primary btn-lg">Submit</button>
-                            </div>
-                        </div>
-                    </fieldset>
-                </form>
-            </div>
+  <div class="row" *ngIf="!submitted" >
+    <div class="col-sm-12 text-left">
+      <form [formGroup]="contactForm"  (ngSubmit)="onSubmit()" >
+        <div class="form-group">
+          <label for="subject">Subject of enquiry</label>
+          <input [formControlName]="'subject'"
+          type="text" id="subject" class="form-control"> 
+          <span *ngIf="!contactForm.get('subject').valid && contactForm.get('subject').touched" class="help-block">
+            <span *ngIf="contactForm.get('subject').errors['required']">
+              This field is required!
+            </span>
+            <span *ngIf="!contactForm.get('subject').errors['required'] 
+                         && contactForm.get('subject').errors['blankSpaces']">
+              Empty spaces are not accepted.
+            </span>
+          </span>      
         </div>
+        <div class="form-group">
+          <label for="useremail">Your Email</label>
+          <input [formControlName]="'useremail'"
+          type="email" id="useremail" class="form-control">
+          <span *ngIf="!contactForm.get('useremail').valid 
+          && contactForm.get('useremail').touched"
+          class="help-block">
+            This field is required!
+          </span>           
+        </div>
+        <hr/>
+        <p>Foodcourt Enquired</p>
+        <div class="form-check">
+            <input [formControlName]="'fcenquired'" class="form-check-input" type="radio" id="fcenquired1" value="" checked>
+            <label class="form-check-label" for="fcenquired1">
+              None
+            </label>
+          </div>
+          <div class="form-check">
+            <input [formControlName]="'fcenquired'" class="form-check-input" type="radio" id="fcenquired2" value="Foodcourt 4 Koufu">
+            <label class="form-check-label" for="fcenquired2">
+              Foodcourt 4 Koufu
+            </label>
+          </div>
+          <div class="form-check">
+            <input [formControlName]="'fcenquired'" class="form-check-input" type="radio" id="fcenquired3" value="Foodcourt 6">
+            <label class="form-check-label" for="fcenquired3">
+              Foodcourt 6
+            </label>
+            <br/>
+            <span *ngIf="!contactForm.get('fcenquired').valid 
+            && contactForm.get('fcenquired').touched"
+            class="help-block">
+              You must select a foodcourt to enquire.
+            </span>        
+          </div>
+          <br/>
+        <div class="form-group">
+          <label for="usermessage">Your Message</label>
+          <textarea [formControlName]="'usermessage'"
+           type="text" id="usermessage" rows="5" class="form-control"></textarea>          
+        </div>
+        <button [disabled]="!contactForm.valid" class="btn btn-primary" type="submit">Submit</button>
+      </form>
+      <hr>      
     </div>
+  </div>  
+
+  <div class="row" *ngIf="submitted">
+    <div class="col-sm-8 col-md-offset-2 text-left">
+      <h3>Enquiry sent!</h3>
+      <p>Subject of enquiry: {{ contactForm.value.subject }}</p>
+      <p>Email: {{ contactForm.value.useremail }}</p>
+      <p>Foodcourt enquired: {{ contactForm.value.fcenquired }}</p>
+      <p>Message: {{ contactForm.value.usermessage }}</p>
+    </div>
+  </div>  
+
 </div>

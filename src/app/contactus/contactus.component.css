@@ -1,9 +1,11 @@
-.header {
-    color: #36A0FF;
-    font-size: 27px;
+input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched {
+    border: 1px solid red;
 }
 
-div {
+span.help-block {
+    color: red;
+}
+h4 {
     text-align: center;
-    margin: 0 auto;
+    margin-top: 20px;
 }
