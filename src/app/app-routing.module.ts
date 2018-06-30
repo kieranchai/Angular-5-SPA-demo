@@ -14,7 +14,8 @@ const appRoutes : Routes = [
   {path: 'contactus',           component: ContactusComponent},
   {path: 'foodcourt-summary',   component: FoodcourtSummaryComponent},
   {path: 'foodcourtdetail/:fc_id', component: FoodcourtDetailComponent},
-  {path: 'stalldetail/:stall_id', component: StalldetailComponent}
+  {path: 'stalldetail/:stall_id', component: StalldetailComponent},
+  {path: '**', redirectTo: '/home'} 
 ];
 
 @NgModule({

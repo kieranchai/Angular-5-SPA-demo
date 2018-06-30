@@ -7,9 +7,11 @@
     </p>
     <a routerLink="/foodcourt-summary" class="btn btn-primary">View foodcourt information</a>
   </div>
+  <hr/>
   <div class="card-body">
     <h4 class="card-title">Recent foodcourt updates</h4>
-    <p class="card-text" *ngFor = "let new of newsArr"> 
+    <p class="card-text" *ngFor = "let new of newsArr" [appHoverHighlight] ="{background: 'red', text: 'white'}" 
+    [appExitHighlight] ="{background: 'white', text: 'black'}"> 
       {{new.news}}
     </p>
   </div>

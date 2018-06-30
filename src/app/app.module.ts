@@ -16,6 +16,8 @@ import { Foodcourt } from "./shared/model/foodcourt.model";
 import { Stalls } from "./shared/model/foodcourtstalls.model";
 import { StalldetailComponent } from './stalldetail/stalldetail.component'
 import { StallDishes } from './shared/model/stalldishes.model';
+import { TextPipe } from './shared/pipe/text.pipe';
+import { HoverhighlightDirective } from './shared/directive/hoverhighlight.directive';
 
 
 @NgModule({
@@ -26,7 +28,9 @@ import { StallDishes } from './shared/model/stalldishes.model';
     ContactusComponent,
     HeaderComponent,
     FoodcourtDetailComponent,
-    StalldetailComponent
+    StalldetailComponent,
+    TextPipe,
+    HoverhighlightDirective
   ],
   imports: [
     BrowserModule,
