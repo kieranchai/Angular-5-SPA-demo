@@ -5,6 +5,7 @@ import { Foodcourt } from "../shared/model/foodcourt.model";
 import { Params, Router } from '@angular/router'
 import { Stalls } from "../shared/model/foodcourtstalls.model";
 import { FoodCourtDetailsService } from "../shared/service/foodcourt-details.service"
+import { StallDishes } from "../shared/model/stalldishes.model";
 
 @Component({
   selector: 'app-foodcourt-detail',
@@ -15,7 +16,6 @@ import { FoodCourtDetailsService } from "../shared/service/foodcourt-details.ser
 export class FoodcourtDetailComponent implements OnInit {
 
   selectedFoodCourt: Foodcourt;
-
   stallarr: Stalls[] = [];
 
   constructor(public router: Router,
@@ -34,8 +34,8 @@ export class FoodcourtDetailComponent implements OnInit {
     }
   }
 
-  // // onViewStalls(stall_name, stall_id : number) {
-  // //   console.log(stall_name,stall_id);
-  // //   this.router.navigate(['/foodcourtsummary', stall_name])
-  // }
+  onViewStalls(stall_id : number) {
+    console.log(stall_id);
+    this.router.navigate(['/stalldetail', stall_id])
+  }
 }

@@ -2,7 +2,9 @@
   <h3 class="card-header">{{Stalls.stall_name}}</h3>
   <div class="card-body">
     <p class="card-text">{{Stalls.description}}</p>
+    <span class="btn btn-primary" (click)="onViewStalls(Stalls.stall_id)">View dishes</span>
   </div>
 </div>
 <hr/>
 <div><span routerLink="/foodcourt-summary" class="btn btn-primary">Go back</span></div>
+<br/>

@@ -7,5 +7,5 @@ export class Stalls {
         public stall_img02 : string,
         public description : string,
     ) { }
-    }
+}
     

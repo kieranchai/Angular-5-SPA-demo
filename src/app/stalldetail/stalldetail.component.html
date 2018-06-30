@@ -1,0 +1,10 @@
+<div class="card" *ngFor="let dishes of dishesArr">
+  <h3 class="card-header">{{dishes.dish_name}}</h3>
+  <div class="card-body">
+    <p class="card-text">{{dishes.availability}}</p>
+    <p class="card-text">{{dishes.price}}</p>
+  </div>
+</div>
+<hr/>
+<div><span routerLink="/foodcourt-summary" class="btn btn-primary">Go back</span></div>
+<br/>

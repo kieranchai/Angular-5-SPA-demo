@@ -7,4 +7,10 @@
     </p>
     <a routerLink="/foodcourt-summary" class="btn btn-primary">View foodcourt information</a>
   </div>
+  <div class="card-body">
+    <h4 class="card-title">Recent foodcourt updates</h4>
+    <p class="card-text" *ngFor = "let new of newsArr"> 
+      {{new.news}}
+    </p>
+  </div>
 </div>

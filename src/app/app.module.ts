@@ -13,8 +13,9 @@ import { FoodCourtService } from './shared/service/food-court.service';
 import { FoodcourtDetailComponent } from './foodcourtdetail/foodcourtdetail.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { Foodcourt } from "./shared/model/foodcourt.model";
-import { Stalls } from "./shared/model/foodcourtstalls.model"
-
+import { Stalls } from "./shared/model/foodcourtstalls.model";
+import { StalldetailComponent } from './stalldetail/stalldetail.component'
+import { StallDishes } from './shared/model/stalldishes.model';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { Stalls } from "./shared/model/foodcourtstalls.model"
     HomeComponent,
     ContactusComponent,
     HeaderComponent,
-    FoodcourtDetailComponent
+    FoodcourtDetailComponent,
+    StalldetailComponent
   ],
   imports: [
     BrowserModule,
