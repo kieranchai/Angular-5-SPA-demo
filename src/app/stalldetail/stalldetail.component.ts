@@ -21,5 +21,4 @@ export class StalldetailComponent implements OnInit {
     const stall_id: number = this.route.snapshot.params['stall_id'];
     this.dishesArr = this.StalldetailsService.getDishesByStallID(stall_id);
   }
-
 }

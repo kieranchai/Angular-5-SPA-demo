@@ -1,18 +1,19 @@
 <div class="card">
   <div class="card-body">
     <h4 class="card-title">Welcome to SP Foodcourts!</h4>
+    <img class="img-thumbnail" src="../assets/images/spwelcome.png"/>
+    <hr/>
     <p class="card-text">
-      Some quick example text to build on the card title
-      and make up the bulk of the card's content.
+      This website provides information on the various foodcourts and dishes available in Singapore Polytechnic.
     </p>
     <a routerLink="/foodcourt-summary" class="btn btn-primary">View foodcourt information</a>
   </div>
-  <hr/>
   <div class="card-body">
     <h4 class="card-title">Recent foodcourt updates</h4>
     <p class="card-text" *ngFor = "let new of newsArr" [appHoverHighlight] ="{background: 'red', text: 'white'}" 
     [appExitHighlight] ="{background: 'white', text: 'black'}"> 
-      {{new.news}}
+      {{new.news | uppercase }}
     </p>
+    <hr/>
   </div>
 </div>
