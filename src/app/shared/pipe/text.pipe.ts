@@ -1,12 +1,30 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'text'
+  name: 'find'
 })
-export class TextPipe implements PipeTransform {
+export class FindPipe implements PipeTransform {
 
-  transform(value: any, args?: any): any {
-    return null;
+  transform(value: any, propertyName:string, searchStr: string): any {
+
+    if (value.length === 0 || searchStr.trim().length === 0 ) {
+      return value;
+    }
+
+    let resultArray = [];
+
+    searchStr = searchStr.toLowerCase();
+
+    for (const elem of value) {
+      const str = elem[propertyName].toLowerCase();
+
+      if(str.indexOf(searchStr) != -1){
+        resultArray.push(elem);
+      }
+    }
+
+    return resultArray;
+
   }
 
 }

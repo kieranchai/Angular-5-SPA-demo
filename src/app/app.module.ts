@@ -16,7 +16,7 @@ import { Foodcourt } from "./shared/model/foodcourt.model";
 import { Stalls } from "./shared/model/foodcourtstalls.model";
 import { StalldetailComponent } from './stalldetail/stalldetail.component'
 import { StallDishes } from './shared/model/stalldishes.model';
-import { TextPipe } from './shared/pipe/text.pipe';
+import { FindPipe } from './shared/pipe/text.pipe';
 import { HoverhighlightDirective } from './shared/directive/hoverhighlight.directive';
 
 
@@ -29,7 +29,7 @@ import { HoverhighlightDirective } from './shared/directive/hoverhighlight.direc
     HeaderComponent,
     FoodcourtDetailComponent,
     StalldetailComponent,
-    TextPipe,
+    FindPipe,
     HoverhighlightDirective
   ],
   imports: [

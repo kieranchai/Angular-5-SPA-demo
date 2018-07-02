@@ -14,7 +14,7 @@ import { StallDishes } from "../shared/model/stalldishes.model";
   providers: [FoodCourtDetailsService]
 })
 export class FoodcourtDetailComponent implements OnInit {
-
+  searchStr : string = "";
   selectedFoodCourt: Foodcourt;
   stallarr: Stalls[] = [];
 
