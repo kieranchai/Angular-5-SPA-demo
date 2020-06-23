@@ -5,3 +5,10 @@ img {
     max-width: 200px;
     height: 200px;
 }
+.container {
+    margin-top: 20px;
+}
+
+#heightm {
+    height: 50px;
+}

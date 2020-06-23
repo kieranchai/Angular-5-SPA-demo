@@ -11,14 +11,18 @@ import { FoodCourtDetailsService } from '../shared/service/foodcourt-details.ser
 })
 export class StalldetailComponent implements OnInit {
   dishesArr : StallDishes[] = [];
-
+  searchStr : string = "";
   constructor(public router: Router,
     public route: ActivatedRoute,
     public StalldetailsService: StalldetailsService,
     public FoodCourtDetailsService: FoodCourtDetailsService) { }
 
   ngOnInit() {
-    const stall_id: number = this.route.snapshot.params['stall_id'];
-    this.dishesArr = this.StalldetailsService.getDishesByStallID(stall_id);
+    const stall_id: string = this.route.snapshot.params['stall_id'];
+    const fc_id: string = this.route.snapshot.params['fc_id'];
+    this.StalldetailsService.loadDishes(fc_id, stall_id) 
+    .subscribe((result)=>{
+      this.dishesArr = this.StalldetailsService.getDishesByStallID(stall_id);
+    });
   }
 }

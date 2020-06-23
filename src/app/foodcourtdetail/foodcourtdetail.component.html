@@ -1,11 +1,25 @@
-<div class="card-header">Search stall name: <input type="text" [(ngModel)]="searchStr"></div>
-<div class="card" *ngFor="let Stalls of stallarr | find: 'stall_name':searchStr">
-  <h3 class="card-header">{{Stalls.stall_name}}</h3>
-  <div class="card-body">
-    <p class="card-text">{{Stalls.description}}</p>
-    <span class="btn btn-primary" (click)="onViewStalls(Stalls.stall_id)">View dishes</span>
-  </div>
+<div class="row heightm">
+      <div class="col">
+        <button type="button" class="btn btn-primary" routerLink="/foodcourt-summary">Go back</button>
+      </div>
+      <div class="col">
+      </div>
+      <div class="col-5">
+        <div>Search stall name: <input type="text" [(ngModel)]="searchStr"></div>
+      </div>
 </div>
 <hr/>
-<div><span routerLink="/foodcourt-summary" class="btn btn-primary">Go back</span></div>
-<br/>
+<div class="container">
+    <div class="row">
+      <div class="col-sm  border-right" *ngFor="let Stalls of stallarr | find: 'stall_name':searchStr">
+        <h3 class="card-text">{{Stalls.stall_name}}</h3>
+        <div class="card-body">
+            <div id="heightm">
+            <p class="card-text">{{Stalls.description}}</p>
+          </div>
+          <br/>
+            <span class="btn btn-primary" (click)="onViewStalls(Stalls.stall_id)">View dishes</span>
+       </div>
+      </div>
+    </div>
+</div>

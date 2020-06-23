@@ -6,6 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { FoodcourtDetailComponent } from '../foodcourtdetail/foodcourtdetail.component';
 import { ActivatedRoute } from '@angular/router';
 
+
 @Component({
   selector: 'app-foodcourt-summary',
   templateUrl: './foodcourt-summary.component.html',
@@ -16,10 +17,14 @@ export class FoodcourtSummaryComponent implements OnInit {
 
   foodcourtArr: Foodcourt[] = [];
 
-  constructor(public foodCourtService: FoodCourtService, public router: Router, public route: ActivatedRoute, ) { }
+  constructor(private foodCourtService: FoodCourtService, private router: Router, private route: ActivatedRoute, ) { }
 
   ngOnInit() {
-    this.foodcourtArr = this.foodCourtService.getFoodCourts();
+    // this.foodcourtArr = this.foodCourtService.getFoodCourts();
+    this.foodCourtService.loadFoodcourt() 
+    .subscribe((result)=>{
+      this.foodcourtArr = this.foodCourtService.getFoodCourts();
+    });
   }
 
   onViewDetail(fc_id: number) {
@@ -27,8 +32,4 @@ export class FoodcourtSummaryComponent implements OnInit {
     this.router.navigate(['/foodcourtdetail', fc_id])
   }
 
-
-
 }
-
-

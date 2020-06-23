@@ -1,11 +1,38 @@
-<div class="card" *ngFor="let dishes of dishesArr">
+<!-- <div class="card" *ngFor="let dishes of dishesArr">
   <h3 class="card-header">{{dishes.dish_name}}</h3>
   <div class="card-body">
     <p class="card-text">{{dishes.availability}}</p>
     <p class="card-text">{{dishes.price}}</p>
-    <img class="img-responsive rounded-circle" src="{{dishes.stall_img01}}"/>
+    <img class=".img-responsive .img-thumbnail" src ={{dishes.stall_img01}}>
   </div>
 </div>
 <hr/>
 <div><span routerLink="/foodcourt-summary" class="btn btn-primary">Go back</span></div>
-<br/>
+<br/> -->
+<div class="row heightm">
+  <div class="col cdivv">
+    <button type="button" class="btn btn-primary" routerLink="/foodcourt-summary">Go back</button>
+  </div>
+  <div class="col">
+  </div>
+  <div class="col-5">
+    <div>Search dish name: <input type="text" [(ngModel)]="searchStr"></div>
+  </div>
+</div>
+<hr/>
+<div class="container">
+  <div class="card-deck mb-3 text-center">
+    <div class="card mb-4 box-shadow" *ngFor="let dishes of dishesArr  | find: 'dish_name':searchStr">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">{{dishes.dish_name}}</h4>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title pricing-card-title">{{dishes.availability}}</h3>
+        <ul class="list-unstyled mt-3 mb-4">
+          <img class="img-thumbnail" src ={{dishes.stall_img01}}>
+        </ul>
+        <p class="btn btn-lg btn-block btn-outline-primary">{{dishes.price}}</p>
+      </div>
+    </div>
+    </div>
+  </div>

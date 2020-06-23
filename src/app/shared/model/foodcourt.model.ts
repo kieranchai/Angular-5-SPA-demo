@@ -1,5 +1,5 @@
 export class Foodcourt {
-    constructor(public fc_id: number,
+    constructor(public fc_id: string,
         public fc_name: string,
         public location: string,
         public op_hours: string,

@@ -22,11 +22,15 @@
           <label for="useremail">Your Email</label>
           <input [formControlName]="'useremail'"
           type="email" id="useremail" class="form-control">
-          <span *ngIf="!contactForm.get('useremail').valid 
-          && contactForm.get('useremail').touched"
-          class="help-block">
-            This field is required!
-          </span>           
+          <span *ngIf="!contactForm.get('useremail').valid && contactForm.get('useremail').touched" class="help-block">
+              <span *ngIf="contactForm.get('useremail').errors['required']">
+                This field is required!
+              </span>
+              <span *ngIf="!contactForm.get('useremail').errors['required'] 
+                           && contactForm.get('useremail').errors['email']">
+                This is not a valid email.
+              </span>
+            </span>             
         </div>
         <hr/>
         <p>Foodcourt Enquired</p>
@@ -61,12 +65,17 @@
            type="text" id="usermessage" rows="5" class="form-control"></textarea>          
         </div>
         <button [disabled]="!contactForm.valid" class="btn btn-primary" type="submit">Submit</button>
+        <hr/>
+        <button routerLink="/feedbacklist" class="btn btn-primary">View previous enquiries</button>
       </form>
       <hr>      
     </div>
   </div>  
-
   <div class="row" *ngIf="submitted">
+    {{ responseMsg }}<hr/>
+    <button (click)="resetForm()" class="btn btn-primary" >Send another feedback</button>
+  </div>
+  <!-- <div class="row" *ngIf="submitted">
     <div class="col-sm-8 col-md-offset-2 text-left">
       <h3>Enquiry sent!</h3>
       <p>Subject of enquiry: {{ contactForm.value.subject }}</p>
@@ -74,6 +83,6 @@
       <p>Foodcourt enquired: {{ contactForm.value.fcenquired }}</p>
       <p>Message: {{ contactForm.value.usermessage }}</p>
     </div>
-  </div>  
+  </div>   -->
 
 </div>

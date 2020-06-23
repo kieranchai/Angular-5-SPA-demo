@@ -24,14 +24,11 @@ export class FoodcourtDetailComponent implements OnInit {
     public FoodCourtDetailsService: FoodCourtDetailsService) { }
 
   ngOnInit() {
-    const fc_id: number = this.route.snapshot.params['fc_id'];
-    this.stallarr = this.FoodCourtDetailsService.getStallByFcID(fc_id);
-    
-    
-    
-    if (this.stallarr.length == 0) {
-      this.router.navigate(['/foodcourtdetail', fc_id]);
-    }
+    const fc_id: string = this.route.snapshot.params['fc_id'];
+    this.FoodCourtDetailsService.loadStall(fc_id) 
+    .subscribe((result)=>{
+      this.stallarr = this.FoodCourtDetailsService.getStallByFcID(fc_id);
+    });
   }
 
   onViewStalls(stall_id : number) {

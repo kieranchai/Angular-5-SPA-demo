@@ -1,12 +1,17 @@
-<div class="card" *ngFor="let fc of foodcourtArr">
-    <h3 class="card-header">{{fc.fc_name}}</h3>
-    <div class="card-body">
-      <h4 class="card-title">{{fc.location}}</h4>
-      <p class="card-text">{{fc.op_hours}}</p>
-      <p class="card-text">{{fc.description}}</p>
-      <img class="img-thumbnail" src="{{fc.fc_img01}}"/>
-      <img class="img-thumbnail" src="{{fc.fc_img02}}"/>
-    <hr/>
-      <span class="btn btn-primary" (click)="onViewDetail(fc.fc_id)">View stalls</span>
+<div class="container">
+    <div class="row"> 
+      <div class="col border-right" *ngFor= "let fc of foodcourtArr" >
+        <h3>{{fc.fc_name}}</h3>
+        <img class="img-thumbnail" src="{{fc.fc_img01}}">
+        <img class="img-thumbnail" src="{{fc.fc_img02}}" >
+        <hr/>
+        <h4>{{fc.location}}, {{fc.op_hours}}</h4>
+        <br/>
+        <div id="heightm">
+            {{fc.description}}
+        </div>
+        <br/>
+        <span class="btn btn-primary" (click)="onViewDetail(fc.fc_id)">View stalls</span>
+      </div>
     </div>
-</div>
+  </div>
